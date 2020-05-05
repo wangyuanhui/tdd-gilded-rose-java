@@ -1,0 +1,11 @@
+apply plugin: 'docker-compose'
+
+dockerCompose {
+    useComposeFiles = ["${projectDir}/gradle/docker-compose/docker-compose.yml"]
+//     stopContainers = false
+//     removeContainers = false
+//     removeVolumes = false
+}
+
+//dependsOn will not stop docker container after bootRun exit and can be reused afterwards, this is good for local development
+bootRun.dependsOn composeUp 

@@ -1,0 +1,24 @@
+version: '3'
+services:
+  postgre:
+    container_name: tdd_training-gilded_rose-postgres
+    image: postgres:12
+    restart: always
+    ports:
+      - '15432:5432'
+    environment:
+      - POSTGRES_DB=mydb
+      - POSTGRES_USER=mydb
+      - POSTGRES_PASSWORD=mydb
+    networks:
+      - tdd_training-gilded_rose-network
+    volumes:
+      - tdd_training-gilded_rose-postgres-data:/var/lib/postgresql/data
+
+networks:
+  tdd_training-gilded_rose-network:
+    driver: bridge
+
+volumes:
+  tdd_training-gilded_rose-postgres-data:
+    driver: local

@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: gilded-rose
+  profiles:
+    active: local
