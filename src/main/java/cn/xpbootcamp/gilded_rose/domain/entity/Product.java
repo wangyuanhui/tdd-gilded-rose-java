@@ -1,13 +1,13 @@
 package cn.xpbootcamp.gilded_rose.domain.entity;
 
 import cn.xpbootcamp.gilded_rose.domain.ProductType;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import java.time.Instant;
 
-@Setter
+@Builder
 @Getter
 @NoArgsConstructor
 public class Product {
@@ -17,4 +17,9 @@ public class Product {
     protected int quality;
     protected Instant createdAt;
     protected Instant bestBefore;
+
+    public static Product create() {
+        // TODO
+        return null;
+    }
 }
