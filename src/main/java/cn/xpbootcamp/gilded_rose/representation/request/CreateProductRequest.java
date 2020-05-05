@@ -1,13 +1,34 @@
 package cn.xpbootcamp.gilded_rose.representation.request;
 
-import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import javax.validation.constraints.FutureOrPresent;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.PastOrPresent;
+import javax.validation.constraints.Positive;
+import java.time.Instant;
 
 @Setter
 @Getter
-@RequiredArgsConstructor(access = AccessLevel.PRIVATE)
+@NoArgsConstructor
+@AllArgsConstructor
 public class CreateProductRequest {
-    // TODO
+
+    @NotBlank
+    private String name;
+
+    @NotBlank
+    private String type;
+
+    @Positive
+    private int defaultQuality;
+
+    @PastOrPresent
+    private Instant createdAt;
+
+    @FutureOrPresent
+    private Instant bestBefore;
 }

@@ -1,6 +1,5 @@
 package cn.xpbootcamp.gilded_rose.infrastructure;
 
-import cn.xpbootcamp.gilded_rose.domain.ProductType;
 import lombok.Data;
 
 import javax.persistence.Column;
@@ -24,7 +23,7 @@ public class ProductData {
 
     private String type;
 
-    private int quality;
+    private int defaultQuality;
 
     private Instant createdAt;
 

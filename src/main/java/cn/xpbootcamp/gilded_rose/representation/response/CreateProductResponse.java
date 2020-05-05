@@ -1,8 +1,10 @@
 package cn.xpbootcamp.gilded_rose.representation.response;
 
-import lombok.Builder;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 
-@Builder
+@Getter
+@AllArgsConstructor
 public class CreateProductResponse {
-    // TODO
+    private long id;
 }

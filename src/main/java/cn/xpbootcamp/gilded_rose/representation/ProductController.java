@@ -1,5 +1,6 @@
 package cn.xpbootcamp.gilded_rose.representation;
 
+import cn.xpbootcamp.gilded_rose.infrastructure.ProductData;
 import cn.xpbootcamp.gilded_rose.representation.request.CreateProductRequest;
 import cn.xpbootcamp.gilded_rose.representation.response.CreateProductResponse;
 import cn.xpbootcamp.gilded_rose.representation.response.GetProductResponse;
@@ -25,13 +26,19 @@ public class ProductController {
 
     @PostMapping
     public CreateProductResponse create(@RequestBody @Valid CreateProductRequest request) {
-        // TODO
-        return null;
+        long id = service.create(request);
+        return new CreateProductResponse(id);
     }
 
     @GetMapping("/{id}")
     public GetProductResponse get(@PathVariable("id") long id) {
-        // TODO
-        return null;
+        ProductData data = service.get(id);
+        return new GetProductResponse(
+                data.getId(),
+                data.getName(),
+                data.getType(),
+                data.getDefaultQuality(),
+                data.getCreatedAt(),
+                data.getBestBefore());
     }
 }
