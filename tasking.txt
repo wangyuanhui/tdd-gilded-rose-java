@@ -1,0 +1,5 @@
+1, understand requirements
+2, design code structure
+3, add dependencies
+4, initialise DB
+5, design  DB table
